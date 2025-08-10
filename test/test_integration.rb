@@ -5,8 +5,6 @@ require_relative "test_helper"
 class TestIntegration < Minitest::Test
   def setup
     super
-    skip "Integration tests require valid API key" unless valid_api_key?
-    # Reset with the actual API key from environment
     DilisensePepClient.reset!
   end
 
@@ -136,8 +134,4 @@ class TestIntegration < Minitest::Test
 
   private
 
-  def valid_api_key?
-    key = ENV["DILISENSE_API_KEY"]
-    key && key != "test_api_key" && !key.empty? && key.length > 10
-  end
 end

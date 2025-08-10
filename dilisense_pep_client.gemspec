@@ -34,7 +34,12 @@ Gem::Specification.new do |spec|
 
   # Runtime dependencies
   spec.add_dependency "faraday", "~> 2.0"
+  spec.add_dependency "faraday-retry", "~> 2.0"
   spec.add_dependency "dotenv", "~> 2.0"
+  spec.add_dependency "semantic_logger", "~> 4.0"
+  spec.add_dependency "dry-validation", "~> 1.10"
+  spec.add_dependency "dry-configurable", "~> 1.0"
+  spec.add_dependency "concurrent-ruby", "~> 1.2"
 
   # Development dependencies
   spec.add_development_dependency "bundler", "~> 2.0"

@@ -16,4 +16,11 @@ class Minitest::Test
   def setup
     DilisensePepClient.reset!
   end
+
+  def teardown
+    # Add delay between API tests to avoid rate limits
+    if self.class.name.include?("Integration") || self.class.name.include?("Entity") || self.class.name.include?("Fuzzy")
+      sleep 2
+    end
+  end
 end

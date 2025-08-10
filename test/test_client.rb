@@ -12,7 +12,7 @@ class TestClient < Minitest::Test
   def test_client_requires_api_key
     puts "\n=== Testing: API Key Validation ==="
     
-    ENV["DILISENSE_API_KEY"] = nil
+    ENV["DILISENSE_API_KEY"] = ""
     DilisensePepClient.reset!
 
     error = assert_raises(DilisensePepClient::ConfigurationError) do

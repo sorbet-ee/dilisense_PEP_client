@@ -72,14 +72,32 @@ result = DilisensePepClient.check_individual(names: "Donald Trump")
 #   }
 # ]
 
-# Check entity (still uses params hash)
+# Check entity - also returns array with one element per unique entity
 result = DilisensePepClient.check_entity(names: "ACME Corp")
+# => [] (empty array if no matches)
+
+result = DilisensePepClient.check_entity(names: "Gazprom")
+# => [
+#   {
+#     name: "Gazprom",
+#     source_type: "SANCTION",
+#     jurisdiction: ["RU"],
+#     address: ["Russia"],
+#     sanction_details: ["Subject to sanctions"],
+#     sources: ["us_department_of_treasury_sdn"],
+#     total_records: 1
+#   }
+# ]
+
+# Entity with fuzzy search
+result = DilisensePepClient.check_entity(names: "Gasprom", fuzzy_search: 1)
 ```
 
 ## Response Format
 
-The `check_individual` method returns an **array** where each element represents a unique person:
+Both `check_individual` and `check_entity` return an **array** where each element represents a unique person/entity:
 
+### Individual Response
 ```ruby
 [
   {
@@ -92,6 +110,23 @@ The `check_individual` method returns an **array** where each element represents
     sources: ["source1", "source2"], # All sources where found
     total_records: 16,               # Number of raw records
     raw_records: [...]               # All original API records
+  }
+]
+```
+
+### Entity Response
+```ruby
+[
+  {
+    name: "Company Name",            # Primary entity name
+    source_type: "SANCTION",        # PEP, SANCTION, CRIMINAL
+    pep_type: "STATE_OWNED_ENTERPRISE", # Only for PEP entities
+    jurisdiction: ["RU"],           # Array of jurisdictions
+    address: ["Moscow, Russia"],    # Array of addresses
+    sanction_details: ["Reason"],   # Array of sanction details
+    sources: ["source1", "source2"], # All sources where found
+    total_records: 3,               # Number of raw records
+    raw_records: [...]              # All original API records
   }
 ]
 ```
