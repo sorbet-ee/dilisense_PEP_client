@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Sorbeet Payments OU"]
   spec.email = ["angelos@sorbet.ee"]
 
-  spec.summary = "Ruby client for Dilisense Screening API"
-  spec.description = "A Ruby gem for interacting with Dilisense's PEP (Politically Exposed Persons) screening API"
+  spec.summary = "Enterprise Ruby client for Dilisense PEP and sanctions screening API"
+  spec.description = "Industrial-grade Ruby client for Dilisense's PEP (Politically Exposed Persons) and sanctions screening API. Designed for Estonian financial institutions and FinTech companies requiring AML/KYC compliance with comprehensive error handling, audit logging, and security features."
   spec.homepage = "https://github.com/sorbet-ee/dilisense_PEP_client"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
@@ -34,11 +34,9 @@ Gem::Specification.new do |spec|
 
   # Runtime dependencies
   spec.add_dependency "faraday", "~> 2.0"
-  spec.add_dependency "faraday-retry", "~> 2.0"
   spec.add_dependency "dotenv", "~> 2.0"
   spec.add_dependency "semantic_logger", "~> 4.0"
   spec.add_dependency "dry-validation", "~> 1.10"
-  spec.add_dependency "dry-configurable", "~> 1.0"
   spec.add_dependency "concurrent-ruby", "~> 1.2"
 
   # Development dependencies
