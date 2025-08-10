@@ -4,10 +4,8 @@ PATH
     dilisense_pep_client (0.1.0)
       concurrent-ruby (~> 1.2)
       dotenv (~> 2.0)
-      dry-configurable (~> 1.0)
       dry-validation (~> 1.10)
       faraday (~> 2.0)
-      faraday-retry (~> 2.0)
       semantic_logger (~> 4.0)
 
 GEM
@@ -60,8 +58,6 @@ GEM
       logger
     faraday-net_http (3.4.1)
       net-http (>= 0.5.0)
-    faraday-retry (2.3.2)
-      faraday (~> 2.0)
     json (2.13.2)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)

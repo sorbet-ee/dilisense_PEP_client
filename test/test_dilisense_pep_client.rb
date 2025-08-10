@@ -22,12 +22,12 @@ class TestDilisensePepClient < Minitest::Test
       config.base_url = "https://test.example.com"
     end
 
-    puts "API Key: #{DilisensePepClient.configuration.config.api_key}"
-    puts "Base URL: #{DilisensePepClient.configuration.config.base_url}"
+    puts "API Key: #{DilisensePepClient.configuration.api_key}"
+    puts "Base URL: #{DilisensePepClient.configuration.base_url}"
     puts "Result: ✓ Configuration override working"
     
-    assert_equal "test_key_12345", DilisensePepClient.configuration.config.api_key
-    assert_equal "https://test.example.com", DilisensePepClient.configuration.config.base_url
+    assert_equal "test_key_12345", DilisensePepClient.configuration.api_key
+    assert_equal "https://test.example.com", DilisensePepClient.configuration.base_url
   end
 
   def test_configuration_defaults
@@ -42,7 +42,7 @@ class TestDilisensePepClient < Minitest::Test
       config.api_key = "test_key_12345"
     end
     
-    config = DilisensePepClient.configuration.config
+    config = DilisensePepClient.configuration
 
     puts "Base URL: #{config.base_url}"
     puts "Timeout: #{config.timeout}s"

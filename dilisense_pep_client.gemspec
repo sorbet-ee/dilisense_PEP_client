@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["angelos@sorbet.ee"]
 
   spec.summary = "Enterprise Ruby client for Dilisense PEP and sanctions screening API"
-  spec.description = "Industrial-grade Ruby client for Dilisense's PEP (Politically Exposed Persons) and sanctions screening API. Designed for Estonian financial institutions and FinTech companies requiring AML/KYC compliance with comprehensive error handling, audit logging, and security features."
+  spec.description = "Industrial-grade Ruby client for Dilisense's PEP (Politically Exposed Persons) and sanctions screening API. Designed for Estonian financial institutions and FinTech companies requiring AML/KYC compliance with comprehensive error handling, audit logging, and security features. Version 0.1.1 includes improved test reliability and configuration fixes."
   spec.homepage = "https://github.com/sorbet-ee/dilisense_PEP_client"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
